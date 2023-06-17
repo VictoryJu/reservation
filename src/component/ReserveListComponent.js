@@ -1,5 +1,6 @@
 import { statusType } from "../data/statusType.js";
 import { timeFormat } from "../utils/timeFormat.js";
+import { ReserveDetailComponent } from "./ReserveDetailComponent.js";
 
 export class ReserveListComponent {
     constructor (reserveDatas,app){
@@ -14,11 +15,11 @@ export class ReserveListComponent {
         const result = data.filter(item=>item.status!=="done").map((item)=>{
             const tables = item.tables.map((table)=>table.name).join(", ");
             const menus = item.menus.map((menu)=>`${menu.name}(${menu.qty})`).join(", ");
-            const registered = timeFormat(item.timeRegistered);
+            const reservedTime = timeFormat(reserve.timeReserved);
             return`
                 <div id=${item.id} class="reservation-wrap">
                     <div class="left-item">
-                        <div>${registered}</div>
+                        <div>${reservedTime}</div>
                         <div text-color=${item.status} class="status">${statusType[item.status].description}</div>
                     </div>
                     <div class="center-item">
@@ -32,7 +33,10 @@ export class ReserveListComponent {
         });
         this.app.innerHTML = result.join("");
         this.setClickBtns()
+        this.setClickDivs()
     }
+
+
 
 
     reserveBtnClicked (type,id) {
@@ -55,13 +59,30 @@ export class ReserveListComponent {
         this.render(this.initialDatas);
     }
 
+    reserveWrapClicked(id){
+        const detailReserve = this.initialDatas.filter(item=>item.id===id);
+        console.log(detailReserve)
+        const detailReserveEl = document.querySelector("#reservation-detail-container");
+        new ReserveDetailComponent(detailReserve,detailReserveEl);
+    }
+
     setClickBtns = () => {
             const buttons = document.getElementsByClassName("reserve-btn");
             Array.prototype.forEach.call(buttons,(button)=>{
                 button.addEventListener("click",(el)=>{
+                    el.stopPropagation();
                     this.reserveBtnClicked(el.target.dataset.type,el.target.parentElement.id);
                 })
             })
         }
+    
+    setClickDivs = () => {
+        const divLists = document.getElementsByClassName("reservation-wrap");
+        Array.prototype.forEach.call(divLists,(div)=>{
+            div.addEventListener("click",(el)=>{
+                this.reserveWrapClicked(el.target.id);
+            })
+        })
+    }
     
 }

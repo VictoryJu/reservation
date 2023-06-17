@@ -88,6 +88,7 @@ body .reservation-wrap .reserve-btn {
   color: #fff;
 }
 body .reservation-detail-container {
+  display: none;
   width: 350px;
   background-color: #fff;
   height: 100%;
