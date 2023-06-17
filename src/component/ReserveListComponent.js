@@ -1,27 +1,32 @@
+import { statusType } from "../data/statusType.js";
+import { timeFormat } from "../utils/timeFormat.js";
+
 export class ReserveListComponent {
     constructor (reserveDatas,app){
         this.app = app;
         this.render(reserveDatas);
     }
+
     render(data){
-        const result = data.reservations.map((item)=>{
+        const result = data.reservations.filter(item=>item.status!=="done").map((item)=>{
+            const tables = item.tables.map((table)=>table.name).join(", ");
+            const menus = item.menus.map((menu)=>`${menu.name}(${menu.qty})`).join(", ");
+            const registered = timeFormat(item.timeRegistered);
             return`
                 <div class="reservation-wrap">
                     <div class="left-item">
-                        <div> ${item.id} </div>
-                        <div>시간</div>
-                        <div class="status">상태</div>
+                        <div>${registered}</div>
+                        <div class="status">${statusType[item.status].description}</div>
                     </div>
                     <div class="center-item">
-                        <div class="name">예약자명 - 테이블명</div>
-                        <div class="type">성인 아이</div>
-                        <div class="menu">메뉴명</div>
+                        <div class="name">${item.customer.name} - ${tables}</div>
+                        <div class="type">성인 ${item.customer.adult} 아이 ${item.customer.child}</div>
+                        <div class="menu">${menus}</div>
                     </div>
-                    <button class="reserve-btn">버튼</button>
+                    <button class="reserve-btn">${statusType[item.status].btnText}</button>
                 </div>
             `
         });
-        console.log(result)
         this.app.innerHTML = result.join("");
     }
     

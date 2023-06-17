@@ -61,6 +61,14 @@ body .reservation-wrap .center-item {
 }
 body .reservation-wrap .center-item .name {
   margin-bottom: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+body .reservation-wrap .center-item .menu {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 body .reservation-wrap .center-item .type {
   margin-bottom: 10px;
