@@ -13,10 +13,10 @@ export class ReserveListComponent {
             const menus = item.menus.map((menu)=>`${menu.name}(${menu.qty})`).join(", ");
             const registered = timeFormat(item.timeRegistered);
             return`
-                <div class="reservation-wrap">
+                <div id=${item.id} class="reservation-wrap">
                     <div class="left-item">
                         <div>${registered}</div>
-                        <div class="status">${statusType[item.status].description}</div>
+                        <div text-color=${item.status} class="status">${statusType[item.status].description}</div>
                     </div>
                     <div class="center-item">
                         <div class="name">${item.customer.name} - ${tables}</div>

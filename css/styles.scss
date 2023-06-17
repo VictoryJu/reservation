@@ -13,6 +13,14 @@ button{
   font-size: 1.2rem;
 }
 
+div[text-color="reserved"]{
+  color: #3BB94C;
+}
+
+div[text-color="seated"]{
+  color: #162149;
+}
+
 li{
   list-style: none;
 }
