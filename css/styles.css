@@ -112,11 +112,13 @@ body .reservation-detail-container .title {
 }
 body .reservation-detail-container .info-line {
   display: flex;
+  align-items: center;
   margin-bottom: 15px;
 }
 body .reservation-detail-container .info-line .left-item {
   width: 40%;
 }
 body .reservation-detail-container .info-line .right-item {
+  flex: 1;
   font-weight: 600;
 }/*# sourceMappingURL=styles.css.map */

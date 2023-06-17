@@ -113,11 +113,13 @@ body{
     }
     .info-line{
       display: flex;
+      align-items: center;
       margin-bottom: 15px;
       .left-item{
         width: 40%;
       }
       .right-item{
+        flex:1;
         font-weight: 600;
       }
     }
