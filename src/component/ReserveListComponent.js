@@ -11,7 +11,6 @@ export class ReserveListComponent {
     initialDatas
 
     render(data){
-        console.log(data)
         const result = data.filter(item=>item.status!=="done").map((item)=>{
             const tables = item.tables.map((table)=>table.name).join(", ");
             const menus = item.menus.map((menu)=>`${menu.name}(${menu.qty})`).join(", ");
