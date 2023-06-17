@@ -21,7 +21,8 @@ export class ReserveListComponent {
                 </div>
             `
         });
-        this.app.innerHTML = result;
+        console.log(result)
+        this.app.innerHTML = result.join("");
     }
     
 }
