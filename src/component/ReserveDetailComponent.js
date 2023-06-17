@@ -1,4 +1,5 @@
 import { statusType } from "../data/statusType.js";
+import { timeFormat } from "../utils/timeFormat.js";
 
 export class ReserveDetailComponent {
     constructor (reserveData,app){

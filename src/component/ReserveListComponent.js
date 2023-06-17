@@ -15,7 +15,7 @@ export class ReserveListComponent {
         const result = data.filter(item=>item.status!=="done").map((item)=>{
             const tables = item.tables.map((table)=>table.name).join(", ");
             const menus = item.menus.map((menu)=>`${menu.name}(${menu.qty})`).join(", ");
-            const reservedTime = timeFormat(reserve.timeReserved);
+            const reservedTime = timeFormat(item.timeReserved);
             return`
                 <div id=${item.id} class="reservation-wrap">
                     <div class="left-item">
@@ -58,10 +58,8 @@ export class ReserveListComponent {
         this.initialDatas = this.initialDatas.filter(item => item.id !== id);
         this.render(this.initialDatas);
     }
-
     reserveWrapClicked(id){
         const detailReserve = this.initialDatas.filter(item=>item.id===id);
-        console.log(detailReserve)
         const detailReserveEl = document.querySelector("#reservation-detail-container");
         new ReserveDetailComponent(detailReserve,detailReserveEl);
     }
@@ -80,7 +78,7 @@ export class ReserveListComponent {
         const divLists = document.getElementsByClassName("reservation-wrap");
         Array.prototype.forEach.call(divLists,(div)=>{
             div.addEventListener("click",(el)=>{
-                this.reserveWrapClicked(el.target.id);
+                this.reserveWrapClicked(el.currentTarget.id);
             })
         })
     }
