@@ -52,12 +52,16 @@ export class ReserveListComponent {
             return item
         });
         this.render(this.initialDatas);
+        
+        const detailReserveEl = document.querySelector("#reservation-detail-container");
+        if(getComputedStyle(detailReserveEl).display==="block") this.reserveWrapClicked(id);
     }
 
     deleteReserve(id){
         this.initialDatas = this.initialDatas.filter(item => item.id !== id);
         this.render(this.initialDatas);
     }
+
     reserveWrapClicked(id){
         const detailReserve = this.initialDatas.filter(item=>item.id===id);
         const detailReserveEl = document.querySelector("#reservation-detail-container");
