@@ -91,7 +91,7 @@ body{
 
   .reservation-detail-container{
     display: none;
-    width: 350px; 
+    width: 400px; 
     background-color: #fff; 
     height: 100%;
     border-radius: 15px;
@@ -113,7 +113,6 @@ body{
     }
     .info-line{
       display: flex;
-      align-items: center;
       margin-bottom: 15px;
       .left-item{
         width: 40%;
@@ -121,6 +120,19 @@ body{
       .right-item{
         flex:1;
         font-weight: 600;
+        word-break: break-all;
+        overflow: hidden;
+        display: -webkit-inline-box;
+        -webkit-box-orient: vertical;
+      }
+      .requset{
+        -webkit-line-clamp: 3;
+      }
+      .memo{
+        -webkit-line-clamp: 3;
+      }
+      .name{
+        -webkit-line-clamp: 1;
       }
     }
   }

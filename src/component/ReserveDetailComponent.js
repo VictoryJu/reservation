@@ -12,7 +12,6 @@ export class ReserveDetailComponent {
 
     render(reserve){
         this.app.style.display = "block"
-        console.log(reserve)
         const {timeRegistered,timeReserved,status} = reserve;
         const {name,level,memo,request} = reserve.customer;
         const registeredTime = timeFormat(timeRegistered);
@@ -37,7 +36,7 @@ export class ReserveDetailComponent {
             <div class="title">고객 정보</div>
             <div class="info-line">
                 <div class="left-item">고객 성명</div>
-                <div class="right-item">${name}</div>
+                <div class="right-item name">${name}</div>
             </div>
             <div class="info-line">
                 <div class="left-item">고객 등급</div>
@@ -45,13 +44,13 @@ export class ReserveDetailComponent {
             </div>
             <div class="info-line">
                 <div class="left-item">고객 메모</div>
-                <div class="right-item">${memo}</div>
+                <div class="right-item memo">${memo}</div>
             </div>
         </div>
         <div class="request-wrap">
             <div class="info-line">
                 <div class="left-item">요청 사항</div>
-                <div class="right-item">${request}</div>
+                <div class="right-item requset">${request}</div>
             </div>
         </div>
         `
