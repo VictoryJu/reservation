@@ -167,6 +167,7 @@ body {
     padding: 15px 8px;
   }
   body .dim {
+    display: none;
     width: 100%;
     height: 100%;
     position: fixed;
@@ -231,9 +232,13 @@ body {
   }
   body .reservation-detail-container {
     display: none;
-    width: 450px;
+    position: fixed;
+    left: 0px;
+    top: 15%;
+    z-index: 999;
+    width: 100%;
     background-color: #fff;
-    height: 100%;
+    height: 0px;
     border-radius: 15px;
     padding: 15px 35px;
   }

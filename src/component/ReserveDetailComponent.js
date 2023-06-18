@@ -10,9 +10,10 @@ export class ReserveDetailComponent {
     }
 
     initialData
-
     render(reserve){
+        const dimEl = document.querySelector(".dim");
         this.app.style.display = "block"
+        dimEl.style.display = "block"
         const {timeRegistered,timeReserved,status} = reserve;
         const {name,level,memo,request} = reserve.customer;
         const registeredTime = timeFormat(timeRegistered);
@@ -54,11 +55,9 @@ export class ReserveDetailComponent {
                 <div class="right-item requset">${request}</div>
             </div>
         </div>
-        <div id="dim" class="dim"></div>
         `
         this.app.innerHTML = result
     }
-
 
     outSideClick(){
         document.addEventListener("click", function (event) {
@@ -66,7 +65,9 @@ export class ReserveDetailComponent {
             const containerEl = document.querySelector(".dim");
             if (containerEl.contains(targetEl)) {
               const detailEl = document.querySelector(".reservation-detail-container")
+              const dimEl = document.querySelector(".dim");
               detailEl.style.display = "none";
+              dimEl.style.display = "none";
               return;
             }
           });
