@@ -34,6 +34,13 @@ body{
 
 body{
   padding:15px 20px;
+
+  .main-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
   .header-title{
     text-align: center; 
     font-size:70px; 
@@ -41,12 +48,14 @@ body{
   }
   main{
     margin-top:100px; 
+    flex:1;
     display: flex;
+    overflow: hidden;
   }
 
   .reservation-container{
     flex:1; 
-    max-height: 27.5rem; 
+    height: 100%; 
     overflow-y: auto;
     margin-right: 25px;
   }
