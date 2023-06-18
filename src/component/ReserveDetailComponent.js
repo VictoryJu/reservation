@@ -6,7 +6,7 @@ const DIM_EL = document.querySelector(".dim");
 export class ReserveDetailComponent {
     constructor (reserveData,app){
         this.app = app;
-        this.initialData = reserveData[0];
+        this.initialData = reserveData;
         this.render(this.initialData);
         this.outSideClick();
         this.closeBtnClick();

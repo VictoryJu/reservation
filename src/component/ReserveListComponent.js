@@ -2,11 +2,14 @@ import { statusType } from "../data/statusType.js";
 import { timeFormat } from "../utils/timeFormat.js";
 import { ReserveDetailComponent } from "./ReserveDetailComponent.js";
 
+const DETAIL_RESERVE_EL = document.querySelector("#reservation-detail-container")
+const INITIAL_VALUE = 0
 export class ReserveListComponent {
     constructor (reserveDatas,app){
         this.app = app;
         this.initialDatas = reserveDatas.reservations;
         this.render(this.initialDatas);
+        new ReserveDetailComponent(this.initialDatas[INITIAL_VALUE],DETAIL_RESERVE_EL);
     }
 
     initialDatas
@@ -52,9 +55,7 @@ export class ReserveListComponent {
             return item
         });
         this.render(this.initialDatas);
-        
-        const detailReserveEl = document.querySelector("#reservation-detail-container");
-        if(getComputedStyle(detailReserveEl).display==="block") this.reserveWrapClicked(id);
+        if(getComputedStyle(DETAIL_RESERVE_EL).display==="block") this.reserveWrapClicked(id);
     }
 
     deleteReserve(id){
@@ -64,8 +65,7 @@ export class ReserveListComponent {
 
     reserveWrapClicked(id){
         const detailReserve = this.initialDatas.filter(item=>item.id===id);
-        const detailReserveEl = document.querySelector("#reservation-detail-container");
-        new ReserveDetailComponent(detailReserve,detailReserveEl);
+        new ReserveDetailComponent(...detailReserve,DETAIL_RESERVE_EL);
     }
 
     setClickBtns = () => {
