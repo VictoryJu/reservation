@@ -61,3 +61,7 @@
 ## 👀 ETC
 - 고객 메모, 요청 사항은 3줄 말줄임 표시 그외 는 1줄 말줄임 표시 구현
 
+# ❗️ 실행 방법
+1. git clone
+2. npm install
+3. npm run start
