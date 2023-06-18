@@ -60,6 +60,19 @@ body{
     margin-right: 25px;
   }
 
+  .reservation-container::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  .reservation-container::-webkit-scrollbar-thumb {
+      background: rgba(0, 0, 0, .3);
+      border-radius: 10px;
+  }
+
+  .reservation-container::-webkit-scrollbar-track {
+      background: rgba(33, 122, 244, .1); 
+  }
+
   .reservation-wrap{
     display: flex; 
     align-items: center; 
@@ -69,12 +82,15 @@ body{
     border-radius:15px;
     .left-item{
       width:15%;
+      font-size: 20px;
       .status{
         margin-top:15px;
       }
     }
     .center-item{
       width:65%;
+      padding-right: 10px;
+      font-size: 17px;
       .name{
         margin-bottom: 10px;
         overflow: hidden;
@@ -100,7 +116,7 @@ body{
 
   .reservation-detail-container{
     display: none;
-    width: 400px; 
+    width: 450px; 
     background-color: #fff; 
     height: 100%;
     border-radius: 15px;
@@ -118,13 +134,14 @@ body{
       text-align: center;
       font-size: 25px;
       font-weight: 600;
-      margin-bottom: 20px;
+      margin-top:20px;
+      margin-bottom: 30px;
     }
     .info-line{
       display: flex;
       margin-bottom: 15px;
       .left-item{
-        width: 40%;
+        width: 33%;
       }
       .right-item{
         flex:1;

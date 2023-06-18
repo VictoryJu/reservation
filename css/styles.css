@@ -58,6 +58,16 @@ body .reservation-container {
   overflow-y: auto;
   margin-right: 25px;
 }
+body .reservation-container::-webkit-scrollbar {
+  width: 5px;
+}
+body .reservation-container::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+body .reservation-container::-webkit-scrollbar-track {
+  background: rgba(33, 122, 244, 0.1);
+}
 body .reservation-wrap {
   display: flex;
   align-items: center;
@@ -68,12 +78,15 @@ body .reservation-wrap {
 }
 body .reservation-wrap .left-item {
   width: 15%;
+  font-size: 20px;
 }
 body .reservation-wrap .left-item .status {
   margin-top: 15px;
 }
 body .reservation-wrap .center-item {
   width: 65%;
+  padding-right: 10px;
+  font-size: 17px;
 }
 body .reservation-wrap .center-item .name {
   margin-bottom: 10px;
@@ -97,7 +110,7 @@ body .reservation-wrap .reserve-btn {
 }
 body .reservation-detail-container {
   display: none;
-  width: 400px;
+  width: 450px;
   background-color: #fff;
   height: 100%;
   border-radius: 15px;
@@ -116,14 +129,15 @@ body .reservation-detail-container .title {
   text-align: center;
   font-size: 25px;
   font-weight: 600;
-  margin-bottom: 20px;
+  margin-top: 20px;
+  margin-bottom: 30px;
 }
 body .reservation-detail-container .info-line {
   display: flex;
   margin-bottom: 15px;
 }
 body .reservation-detail-container .info-line .left-item {
-  width: 40%;
+  width: 33%;
 }
 body .reservation-detail-container .info-line .right-item {
   flex: 1;
