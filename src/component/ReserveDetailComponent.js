@@ -6,6 +6,7 @@ export class ReserveDetailComponent {
         this.app = app;
         this.initialData = reserveData[0];
         this.render(this.initialData);
+        this.outSideClick();
     }
 
     initialData
@@ -53,7 +54,22 @@ export class ReserveDetailComponent {
                 <div class="right-item requset">${request}</div>
             </div>
         </div>
+        <div id="dim" class="dim"></div>
         `
         this.app.innerHTML = result
+    }
+
+
+    outSideClick(){
+        document.addEventListener("click", function (event) {
+            const targetEl = event.target;
+            const containerEl = document.querySelector(".dim");
+            if (containerEl.contains(targetEl)) {
+              const detailEl = document.querySelector(".reservation-detail-container")
+              detailEl.style.display = "none";
+              return;
+            }
+          });
+          return
     }
 }
