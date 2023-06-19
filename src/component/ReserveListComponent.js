@@ -55,7 +55,8 @@ export class ReserveListComponent {
             return item
         });
         this.render(this.initialDatas);
-        if(getComputedStyle(DETAIL_RESERVE_EL).display==="block") this.reserveWrapClicked(id);
+        const clickDetailLen = DETAIL_RESERVE_EL.getElementsByClassName(`${id}`).length
+        if(getComputedStyle(DETAIL_RESERVE_EL).position==="static" && clickDetailLen>0) this.reserveWrapClicked(id);
     }
 
     deleteReserve(id){

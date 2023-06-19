@@ -25,7 +25,7 @@ export class ReserveDetailComponent {
         const registeredTime = timeFormat(timeRegistered);
         const reservedTime = timeFormat(timeReserved);
         const result = `
-        <div class="detail-wrap">
+        <div class="detail-wrap ${reserve.id}">
             <div class="title">
                 예약 정보
                 <div class="close-btn">닫기</div>
@@ -69,7 +69,6 @@ export class ReserveDetailComponent {
     }
 
     closeApp(){
-        this.app.style.display = "none";
         this.app.className = this.app.className.replace(" active","");
         DIM_EL.style.display = "none"
         return
