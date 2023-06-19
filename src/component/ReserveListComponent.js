@@ -39,9 +39,6 @@ export class ReserveListComponent {
         this.setClickDivs()
     }
 
-
-
-
     reserveBtnClicked (type,id) {
         if(type==='seated') this.deleteReserve(id);
         if(type==='reserved') this.updateReserve(id);
