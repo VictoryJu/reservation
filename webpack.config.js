@@ -8,6 +8,7 @@ module.exports = {
     path: path.resolve(__dirname, "build"),
     clean: true,
   },
+  target: ["web", "es5"], 
   module: {
     rules: [
       {
