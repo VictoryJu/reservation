@@ -17,7 +17,7 @@ export class ReserveDetailComponent {
     
     render(reserve){
         if(this.showMobile){
-            this.app.style.display = "block"
+            this.app.className += " active";
             DIM_EL.style.display = "block"
         }
         const {timeRegistered,timeReserved,status} = reserve;
@@ -68,11 +68,17 @@ export class ReserveDetailComponent {
         this.app.innerHTML = result
     }
 
+    closeApp(){
+        this.app.style.display = "none";
+        this.app.className = this.app.className.replace(" active","");
+        DIM_EL.style.display = "none"
+        return
+    }
+
     closeBtnClick(){
         const closeEl = document.querySelector(".close-btn");
         closeEl.addEventListener("click",()=>{
-            this.app.style.display = "none";
-            DIM_EL.style.display = "none"
+            this.closeApp()
             return
         })
         return
@@ -82,8 +88,7 @@ export class ReserveDetailComponent {
         document.addEventListener("click", (event) => {
             const targetEl = event.target;
             if (DIM_EL.contains(targetEl)) {
-              this.app.style.display = "none";
-              DIM_EL.style.display = "none";
+              this.closeApp()
               return
             }
           });

@@ -250,16 +250,23 @@ body{
     }
   
     .reservation-detail-container{
-      display: none;
+      display: block !important;
       position:fixed;
       left: 0px;
-      top:15%;
+      bottom: -15%;
       z-index: 999;
       width: 100%; 
       background-color: #fff; 
-      height: 100%;
+      transition: all 0.3s;
+      height: 0px;
+      overflow: hidden;
+      pointer-events: none;
       border-radius: 15px;
-      padding: 15px 35px;
+      &.active{
+        height: 100%;
+        padding: 15px 35px;
+        pointer-events: all;
+      }
       .detail-wrap{
         margin-bottom:25px;
       }
