@@ -4,8 +4,9 @@ import { timeFormat } from "../utils/timeFormat.js";
 const DIM_EL = document.querySelector(".dim");
 
 export class ReserveDetailComponent {
-    constructor (reserveData,app){
+    constructor (reserveData,app,showMobile){
         this.app = app;
+        this.showMobile = showMobile
         this.initialData = reserveData;
         this.render(this.initialData);
         this.outSideClick();
@@ -15,8 +16,10 @@ export class ReserveDetailComponent {
     initialData
     
     render(reserve){
-        this.app.style.display = "block"
-        DIM_EL.style.display = "block"
+        if(this.showMobile){
+            this.app.style.display = "block"
+            DIM_EL.style.display = "block"
+        }
         const {timeRegistered,timeReserved,status} = reserve;
         const {name,level,memo,request} = reserve.customer;
         const registeredTime = timeFormat(timeRegistered);

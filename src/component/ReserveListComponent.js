@@ -9,7 +9,7 @@ export class ReserveListComponent {
         this.app = app;
         this.initialDatas = reserveDatas.reservations;
         this.render(this.initialDatas);
-        new ReserveDetailComponent(this.initialDatas[INITIAL_VALUE],DETAIL_RESERVE_EL);
+        new ReserveDetailComponent(this.initialDatas[INITIAL_VALUE],DETAIL_RESERVE_EL,false);
     }
 
     initialDatas
@@ -65,7 +65,7 @@ export class ReserveListComponent {
 
     reserveWrapClicked(id){
         const detailReserve = this.initialDatas.filter(item=>item.id===id);
-        new ReserveDetailComponent(...detailReserve,DETAIL_RESERVE_EL);
+        new ReserveDetailComponent(...detailReserve,DETAIL_RESERVE_EL,true);
     }
 
     setClickBtns = () => {
