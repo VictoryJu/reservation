@@ -1,11 +1,13 @@
 # reservation
 
+
 # 🖥️ Desktop 데모 영상
 
-![화면_기록_2023-06-19_오전_1_14_26_AdobeExpress](https://github.com/VictoryJu/reservation/assets/68391427/5907f521-0384-44de-9559-0f6deaed07c9)
+![화면_기록_2023-06-19_오후_12_59_49_AdobeExpress (1)](https://github.com/VictoryJu/reservation/assets/68391427/d2a3fe07-0979-49ac-806b-24b3942beda9)
 
 # 📱 Mobile 데모 영상
-![화면_기록_2023-06-19_오전_1_23_27_AdobeExpress](https://github.com/VictoryJu/reservation/assets/68391427/81230dec-05ce-4616-88e3-c0c0bdb5ef88)
+
+![화면_기록_2023-06-19_오후_12_57_42_AdobeExpress (1)](https://github.com/VictoryJu/reservation/assets/68391427/1e55eb83-cd0a-48ea-bebd-c2d5cee347e2)
 
 
 ## 폴더구조
@@ -60,6 +62,7 @@
 
 ## 👀 ETC
 - 고객 메모, 요청 사항은 3줄 말줄임 표시 그외 는 1줄 말줄임 표시 구현
+- ❗️ Mobile 팝업 표출시 Slide-up 애니메이션 적용
 
 # ❗️ 실행 방법
 1. git clone
